@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="FoodDBEntities-Web.config Connection String" description="FoodDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/DB.FoodDBModel.csdl|res://*/DB.FoodDBModel.ssdl|res://*/DB.FoodDBModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=WIN-TQGBVULSCVD\SQLEXPRESS;initial catalog=FoodDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Openssl\\UPM400\\FoodWebAPI\\FoodWebAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FoodDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoodDBModelStoreContainer" CdmEntityContainer="FoodDBEntities">
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.City)">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drink">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Drink)">
+        <MappingFragment StoreEntitySet="Drink">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Food)">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Id_Restaurant" ColumnName="Id_Restaurant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredient">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Ingredient)">
+        <MappingFragment StoreEntitySet="Ingredient">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredient_To_Food">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Ingredient_To_Food)">
+        <MappingFragment StoreEntitySet="Ingredient_To_Food">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Food" ColumnName="Id_Food" />
+          <ScalarProperty Name="Id_Ingredient" ColumnName="Id_Ingredient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Order)">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+          <ScalarProperty Name="CustomerAdress" ColumnName="CustomerAdress" />
+          <ScalarProperty Name="CustomerZIP" ColumnName="CustomerZIP" />
+          <ScalarProperty Name="CustomerEmail" ColumnName="CustomerEmail" />
+          <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+          <ScalarProperty Name="Id_City" ColumnName="Id_City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_To_Drink">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Order_To_Drink)">
+        <MappingFragment StoreEntitySet="Order_To_Drink">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Id_Drink" ColumnName="Id_Drink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_To_Food">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Order_To_Food)">
+        <MappingFragment StoreEntitySet="Order_To_Food">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Id_Food" ColumnName="Id_Food" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurant">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodDBModel.Restaurant)">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Popularity" ColumnName="Popularity" />
+          <ScalarProperty Name="Id_City" ColumnName="Id_City" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="TypeOfFood" ColumnName="TypeOfFood" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

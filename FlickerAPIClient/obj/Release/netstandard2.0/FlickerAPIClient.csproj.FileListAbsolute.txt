@@ -1,0 +1,9 @@
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\bin\Release\netstandard2.0\FlickerAPIClient.deps.json
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\bin\Release\netstandard2.0\FlickerAPIClient.dll
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\bin\Release\netstandard2.0\FlickerAPIClient.pdb
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.AssemblyInfoInputs.cache
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.AssemblyInfo.cs
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.csproj.CoreCompileInputs.cache
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.dll
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.pdb
+E:\Openssl\UPM400\FoodWebAPI\FlickerAPIClient\obj\Release\netstandard2.0\FlickerAPIClient.csprojAssemblyReference.cache

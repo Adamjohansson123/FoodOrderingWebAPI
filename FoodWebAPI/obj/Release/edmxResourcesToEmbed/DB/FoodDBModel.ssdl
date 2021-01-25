@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoodDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FoodDBModelStoreContainer">
+    <EntitySet Name="City" EntityType="FoodDBModel.Store.City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Drink" EntityType="FoodDBModel.Store.Drink" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Food" EntityType="FoodDBModel.Store.Food" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ingredient" EntityType="FoodDBModel.Store.Ingredient" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ingredient_To_Food" EntityType="FoodDBModel.Store.Ingredient_To_Food" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Order" EntityType="FoodDBModel.Store.Order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Order_To_Drink" EntityType="FoodDBModel.Store.Order_To_Drink" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Order_To_Food" EntityType="FoodDBModel.Store.Order_To_Food" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Restaurant" EntityType="FoodDBModel.Store.Restaurant" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Order_City" Association="FoodDBModel.Store.FK_Order_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurant_City" Association="FoodDBModel.Store.FK_Restaurant_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Restaurant" EntitySet="Restaurant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_To_Drink_Drink" Association="FoodDBModel.Store.FK_Order_To_Drink_Drink">
+      <End Role="Drink" EntitySet="Drink" />
+      <End Role="Order_To_Drink" EntitySet="Order_To_Drink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Food_Restaurant" Association="FoodDBModel.Store.FK_Food_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurant" />
+      <End Role="Food" EntitySet="Food" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingredient_To_Food_Food" Association="FoodDBModel.Store.FK_Ingredient_To_Food_Food">
+      <End Role="Food" EntitySet="Food" />
+      <End Role="Ingredient_To_Food" EntitySet="Ingredient_To_Food" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_To_Food_Food" Association="FoodDBModel.Store.FK_Order_To_Food_Food">
+      <End Role="Food" EntitySet="Food" />
+      <End Role="Order_To_Food" EntitySet="Order_To_Food" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ingredient_To_Food_Ingredient" Association="FoodDBModel.Store.FK_Ingredient_To_Food_Ingredient">
+      <End Role="Ingredient" EntitySet="Ingredient" />
+      <End Role="Ingredient_To_Food" EntitySet="Ingredient_To_Food" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_To_Drink_Order" Association="FoodDBModel.Store.FK_Order_To_Drink_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Order_To_Drink" EntitySet="Order_To_Drink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_To_Food_Order" Association="FoodDBModel.Store.FK_Order_To_Food_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Order_To_Food" EntitySet="Order_To_Food" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Drink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Type" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Id_Restaurant" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ingredient_To_Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Food" Type="int" Nullable="false" />
+    <Property Name="Id_Ingredient" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerFirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerLastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerAdress" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerZIP" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerEmail" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CustomerPhoneNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Id_City" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order_To_Drink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Order" Type="int" Nullable="false" />
+    <Property Name="Id_Drink" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order_To_Food">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerMessage" Type="varchar(max)" Nullable="true" />
+    <Property Name="Id_Order" Type="int" Nullable="false" />
+    <Property Name="Id_Food" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Popularity" Type="int" Nullable="true" />
+    <Property Name="Id_City" Type="int" Nullable="true" />
+    <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Img" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TypeOfFood" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Order_City">
+    <End Role="City" Type="FoodDBModel.Store.City" Multiplicity="1" />
+    <End Role="Order" Type="FoodDBModel.Store.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurant_City">
+    <End Role="City" Type="FoodDBModel.Store.City" Multiplicity="0..1" />
+    <End Role="Restaurant" Type="FoodDBModel.Store.Restaurant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Restaurant">
+        <PropertyRef Name="Id_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_To_Drink_Drink">
+    <End Role="Drink" Type="FoodDBModel.Store.Drink" Multiplicity="1" />
+    <End Role="Order_To_Drink" Type="FoodDBModel.Store.Order_To_Drink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drink">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_To_Drink">
+        <PropertyRef Name="Id_Drink" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Food_Restaurant">
+    <End Role="Restaurant" Type="FoodDBModel.Store.Restaurant" Multiplicity="0..1" />
+    <End Role="Food" Type="FoodDBModel.Store.Food" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food">
+        <PropertyRef Name="Id_Restaurant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ingredient_To_Food_Food">
+    <End Role="Food" Type="FoodDBModel.Store.Food" Multiplicity="1" />
+    <End Role="Ingredient_To_Food" Type="FoodDBModel.Store.Ingredient_To_Food" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ingredient_To_Food">
+        <PropertyRef Name="Id_Food" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_To_Food_Food">
+    <End Role="Food" Type="FoodDBModel.Store.Food" Multiplicity="1" />
+    <End Role="Order_To_Food" Type="FoodDBModel.Store.Order_To_Food" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_To_Food">
+        <PropertyRef Name="Id_Food" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ingredient_To_Food_Ingredient">
+    <End Role="Ingredient" Type="FoodDBModel.Store.Ingredient" Multiplicity="1" />
+    <End Role="Ingredient_To_Food" Type="FoodDBModel.Store.Ingredient_To_Food" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ingredient_To_Food">
+        <PropertyRef Name="Id_Ingredient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_To_Drink_Order">
+    <End Role="Order" Type="FoodDBModel.Store.Order" Multiplicity="1" />
+    <End Role="Order_To_Drink" Type="FoodDBModel.Store.Order_To_Drink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_To_Drink">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_To_Food_Order">
+    <End Role="Order" Type="FoodDBModel.Store.Order" Multiplicity="1" />
+    <End Role="Order_To_Food" Type="FoodDBModel.Store.Order_To_Food" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_To_Food">
+        <PropertyRef Name="Id_Order" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

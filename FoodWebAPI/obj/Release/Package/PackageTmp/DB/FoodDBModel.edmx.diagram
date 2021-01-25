@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d73f9192fcda489ab53540f9e3dd4b2e" Name="Diagram1">
+        <EntityTypeShape EntityType="FoodDBModel.City" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Drink" Width="1.5" PointX="13.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Food" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Ingredient" Width="1.5" PointX="13.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Ingredient_To_Food" Width="1.5" PointX="10.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Order" Width="1.5" PointX="4.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Order_To_Drink" Width="1.5" PointX="10.5" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Order_To_Food" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodDBModel.Restaurant" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="FoodDBModel.FK_Order_City" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Restaurant_City" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Order_To_Drink_Drink" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Food_Restaurant" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Ingredient_To_Food_Food" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Order_To_Food_Food" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Ingredient_To_Food_Ingredient" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Order_To_Drink_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="FoodDBModel.FK_Order_To_Food_Order" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
